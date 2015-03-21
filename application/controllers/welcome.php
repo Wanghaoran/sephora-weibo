@@ -143,7 +143,7 @@ class Welcome extends CI_Controller {
                 $this->session->set_userdata('sephora_wechat_id', $insert_id);
             }
         }
-        redirect('user/' . $_GET['state']);
+        redirect('user/question');
     }
 
 
