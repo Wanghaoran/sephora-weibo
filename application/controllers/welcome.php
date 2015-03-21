@@ -3,6 +3,13 @@
 class Welcome extends CI_Controller {
 
 
+    public function _usershow($asstoken, $uid){
+        $url = 'https://api.weibo.com/2/users/show.json?access_token=' . $asstoken . '&uid=' . $uid;
+        $json_result = file_get_contents($url);
+        $result = json_decode($json_result, true);
+        return $result;
+    }
+
 
 	public function index()
 	{
@@ -121,10 +128,26 @@ class Welcome extends CI_Controller {
             return;
         }
 
-        var_dump($uid);
-
-
+        //select user
+        $this -> load -> model('weibouser_model');
+        if($query_result = $this -> weibouser_model -> queryhave($uid)){
+            //write session
+            $this->session->set_userdata('sephora_wechat_id', $query_result[0]['id']);
+        }else{
+            //create user
+            $user_result = $this -> _usershow($this->session->userdata('token')['access_token'], $this->session->userdata('token')['uid']);
+            if(!$insert_id = $this -> sephora_wechat_id -> insertuser($uid, $user_result['screen_name'], $user_result['avatar_large'])){
+                die('<h1>Authorization failure3! Insert User Error</h1>');
+            }else{
+                //write session
+                $this->session->set_userdata('sephora_wechat_id', $insert_id);
+            }
+        }
+        redirect('user/' . $_GET['state']);
     }
+
+
+    /////////////////
 
     public function oauth2_authorize2(){
 
