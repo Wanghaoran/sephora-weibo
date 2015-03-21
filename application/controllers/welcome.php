@@ -10,15 +10,26 @@ class Welcome extends CI_Controller {
 
     }
 
+    /*
+
     public function wechat_index(){
         $this->load->view('wechat_index');
     }
+    */
 
     public function terms(){
         $this->load->view('terms');
     }
 
     public function oauth2_authorize(){
+
+        include_once('./Weibo.php');
+        $o = new SaeTOAuthV2('2463278834', '5034fe0a57de09e0711d08b691fae605');
+        $code_url = $o->getAuthorizeURL($this->config->base_url() . 'welcome/weibocheck1');
+        $this->load->helper('url');
+        redirect($code_url);
+
+        /*
 
         $q = $_GET['q'];
 
@@ -60,6 +71,58 @@ class Welcome extends CI_Controller {
         }
 
         redirect('user/' . $_GET['state']);
+        */
+
+    }
+
+    public function weibocheck1(){
+        include_once('./Weibo.php');
+
+        $o = new SaeTOAuthV2('2463278834', '5034fe0a57de09e0711d08b691fae605');
+
+        if (isset($_REQUEST['code'])) {
+            $keys = array();
+            $keys['code'] = $_REQUEST['code'];
+            $keys['redirect_uri'] = $this->config->base_url() . 'welcome/weibocheck1';
+            try {
+                $token = $o->getAccessToken('code', $keys ) ;
+            } catch (OAuthException $e) {
+            }
+        }
+
+        if (isset($token)) {
+
+            $this -> session -> set_userdata('token', $token);
+
+            setcookie('weibojs_'.$o->client_id, http_build_query($token));
+
+            $c = new SaeTClientV2('2463278834', '5034fe0a57de09e0711d08b691fae605', $this->session->userdata('token')['access_token']);
+
+            $uid_get = $c->get_uid();
+
+            if(isset($uid_get['error']) && $uid_get['error_code'] == 21321){
+
+                header("Content-type:text/html;charset=utf-8");
+                echo '新浪微博登录功能正在等待微博方面审核，请稍后再试试';
+                return;
+
+            }else if(isset($uid_get['error']) && $uid_get['error_code'] != 21321){
+
+                header("Content-type:text/html;charset=utf-8");
+                echo $uid_get['error'];
+                return;
+
+            }else{
+                $uid = $uid_get['uid'];
+            }
+        }else{
+            header("Content-type:text/html;charset=utf-8");
+            echo '授权验证失败！请您重新打开链接再试一次！';
+            return;
+        }
+
+        var_dump($uid);
+
 
     }
 
