@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:wb="http://open.weibo.com/wb">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
@@ -12,7 +14,7 @@
     <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/reset.css">
     <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/common.css">
     <link rel="stylesheet" type="text/css" href="<?=$this->config->base_url()?>public/css/main.css">
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 
 
 
@@ -25,7 +27,8 @@
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
         <!-- 秘已准备就绪，分享 -->
         <section class="screen" id="screen_4">
-            <a href="#" class="btn_share btn_common" id="btn_s4_share">分享</a>
+            <wb:share-button appkey="3YdKYq" addition="simple" type="button" ralateUid="2616889241" default_text="1萨达"></wb:share-button>
+<!--            <a href="#" class="btn_share btn_common" id="btn_s4_share">分享</a>-->
             <div class="libao s4_libao">
                 <img src="<?=$this->config->base_url()?>public/images/gift.png">
             </div>
@@ -59,43 +62,7 @@
 <script type="text/javascript">
     $(function(){
         Sephora.init();
-        // 微信配置
-        wx.config({
-            debug: false,
-            appId: "wx949efd128cd9bf73",
-            timestamp: '<?php echo $timestamp;?>',
-            nonceStr: '<?php echo $nonceStr;?>',
-            signature: '<?php echo $signature;?>',
-            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-        });
 
-        wx.ready(function() {
-            wx.onMenuShareTimeline({
-                title: '<?=$q?> 答对重赏', // 分享标题
-                link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
-                imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
-                success: function () {
-                    location.href='<?=$this->config->base_url()?>startgift/<?=$qid?>';
-                },
-                cancel: function () {
-                    $("#answer_error").removeClass("dn");
-                }
-            });
-            wx.onMenuShareAppMessage({
-                title: '<?=$q?> 答对重赏', // 分享标题
-                desc: '<?=$q?> 答对重赏', // 分享描述
-                link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
-                imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
-                type: 'link', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    location.href='<?=$this->config->base_url()?>startgift/<?=$qid?>';
-                },
-                cancel: function () {
-                    $("#answer_error").removeClass("dn");
-                }
-            });
-        });
     })
 </script>
 </body>
