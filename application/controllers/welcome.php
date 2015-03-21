@@ -136,7 +136,7 @@ class Welcome extends CI_Controller {
         }else{
             //create user
             $user_result = $this -> _usershow($this->session->userdata('token')['access_token'], $this->session->userdata('token')['uid']);
-            if(!$insert_id = $this -> sephora_wechat_id -> insertuser($uid, $user_result['screen_name'], $user_result['avatar_large'])){
+            if(!$insert_id = $this -> weibouser_model -> insertuser($uid, $user_result['screen_name'], $user_result['avatar_large'])){
                 die('<h1>Authorization failure3! Insert User Error</h1>');
             }else{
                 //write session
