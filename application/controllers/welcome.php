@@ -3,22 +3,11 @@
 class Welcome extends CI_Controller {
 
 
-    /*
+
 	public function index()
 	{
-        //route
-        $this->load->helper('url');
-        if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false){
-            redirect('welcome/wechat_index');
-        }else{
-            redirect('welcome/weibo_index');
-        }
-	}
-
-    */
-
-    public function weibo_index(){
         $this->load->view('weibo_index');
+
     }
 
     public function wechat_index(){
