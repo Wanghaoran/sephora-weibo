@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome/wechat_index";
+$route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['wechat'] = 'welcome/wechat_index';
 $route['terms'] = 'welcome/terms';
