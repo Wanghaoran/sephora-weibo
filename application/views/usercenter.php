@@ -56,7 +56,7 @@
             </div>
             <a class="btn_s8_home btn_common" id="btn_s8_home" href="http://www.sephora.cn?rsour=wechat&rmeth=social&rcamp=Besties&rcont=account">去官网使用</a>
             <!-- <div class="btn_s8_ques btn_common" id="btn_s8_ques">我也要出题</div> -->
-            <div class="btn_back btn_s8_ques btn_common" id="btn_s8_back" onclick="location.href='<?=$this->config->base_url()?>wechat';">返回</div>
+            <div class="btn_back btn_s8_ques btn_common" id="btn_s8_back" onclick="location.href='<?=$this->config->base_url()?>';">返回</div>
         </section>
     </div>
 </div>

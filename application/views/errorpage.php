@@ -27,7 +27,7 @@
             <div class="errorText">
                 猜过了还来？想要礼金自己去出题吧！
             </div>
-            <a href="<?=$this->config->base_url()?>wechat" class="btn_back btn_s7_center btn_common" id="btn_s7_back">我要出题</a>
+            <a href="<?=$this->config->base_url()?>" class="btn_back btn_s7_center btn_common" id="btn_s7_back">我要出题</a>
         </section>
     </div>
 </div>
