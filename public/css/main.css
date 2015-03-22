@@ -33,7 +33,7 @@ img {
 	background:-moz-linear-gradient(top, #fb6255, #e53c2e);
 }
 .s1_libao {	
-	top: 105%;
+	top: 100%;
 }
 .s4_libao {
 	top: 30%;
@@ -253,21 +253,21 @@ section#screen_11 {
 	text-align: center;
 	width: 100%;
 	left: 0;
-	padding-top: 50%;
+	padding-top: 47%;
 	top: 85%;
 }
 .my_gift {
 	position: absolute;
 	z-index: 9;
-	bottom: 5%;
+	bottom: 2%;
 	left: 50%;
 	margin-left: -25%;
 }
 .act_law {
 	position: absolute;
 	z-index: 9;
-	bottom: 5%;
-	left: 50%;
+	bottom: 2%;
+	left: 60%;
 	margin-left: 5%;
 }
 .lookup_p {
@@ -586,7 +586,7 @@ section#screen_11 {
 	width: 100%;
 	font-size: 1.7em;
 	line-height: 1.4;
-	top: 95%;
+	top: 92%;
 	position: absolute;
 	left: 0;
 	text-align: center;
@@ -597,7 +597,7 @@ section#screen_11 {
 	width: 6em;
 	margin-left: -7em;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 9;
 	font-size: 1.8em;
 }
@@ -607,7 +607,7 @@ section#screen_11 {
 	width: 6em;
 	margin-left: 1em;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 9;
 	font-size: 1.8em;
 }
@@ -617,7 +617,7 @@ section#screen_11 {
 	width: 6em;
 	margin-left: -3em;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 9;
 	font-size: 1.8em;
 }
@@ -888,7 +888,7 @@ section#screen_11 {
 	width: 100%;
 	font-size: 1.6em;
 	line-height: 1.4;
-	top: 95%;
+	top: 91%;
 	position: absolute;
 	left: 0;
 	text-align: center;
@@ -899,7 +899,7 @@ section#screen_11 {
 	width: 6em;
 	margin-left: -7em;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 9;
 	font-size: 1.8em;
 }
@@ -909,7 +909,7 @@ section#screen_11 {
 	width: 7em;
 	margin-left: 1em;
 	position: absolute;
-	bottom: 10%;
+	bottom: 8%;
 	z-index: 9;
 	font-size: 1.8em;
 }
@@ -1006,9 +1006,6 @@ section#screen_11 {
 	.btn_share {
 		bottom: 2%;
 	}
-	.btn_s5_home,.btn_s5_ques {
-		bottom: 5%;
-	}
 	.btn_s8_home,.btn_s8_ques {
 		bottom: 5%;
 	}
@@ -1028,7 +1025,7 @@ section#screen_11 {
 		top: 45%;
 	}
 	.btn_s5_home,.btn_s5_ques {
-		bottom: 2%;
+		bottom: 4%;
 	}
 	.s5_txt,.s9_txt {
 		top: 87%;
@@ -1040,7 +1037,7 @@ section#screen_11 {
 		margin-top: 2%;
 	}
 	.btn_s9_home,.btn_s9_ques {
-		bottom: 2%;
+		bottom: 4%;
 	}
 }
 @media only screen and (min-width:361px) and (max-width:479px) {	
