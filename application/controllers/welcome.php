@@ -470,7 +470,7 @@ class Welcome extends CI_Controller {
     }
 
     public function pc(){
-        echo 'pc';
+        $this->load->view('pc');
     }
 }
 
