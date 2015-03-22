@@ -6,7 +6,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
     <meta name="apple-mobile-web-app-title" content="丝芙兰力挺你家闺蜜！让你们都美美哒！">
-    <title>姐最满意自己哪一部分？速速来答题，赢走我的真金犒赏。</title>
+    <title>真金犒赏真闺蜜。速速来答题，赢走我的真金犒赏。丝芙兰力挺你家闺蜜！让你们都美美哒！</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/reset.css">

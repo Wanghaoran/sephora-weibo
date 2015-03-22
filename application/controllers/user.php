@@ -184,7 +184,7 @@ class User extends CI_Controller {
             $name .= '@' . $user_friend['users'][$i]['screen_name'];
         }
 
-        $url = 'http://service.weibo.com/share/share.php?url=' . urlencode($this->config->base_url() . 'q/' . $q) . '&type=button&language=zh_cn&appkey=2463278834&title=＃真金犒赏真闺蜜＃' . $question['q'] . $name . '，速速来答题，应走我的真金犒赏。丝芙兰力挺你家闺蜜！让你们都美哒哒！&searchPic=false&style=simple';
+        $url = 'http://service.weibo.com/share/share.php?url=' . urlencode($this->config->base_url() . 'q/' . $q) . '&type=button&language=zh_cn&appkey=2463278834&title=＃真金犒赏真闺蜜＃' . $question['q'] . $name . '，速速来答题，赢走我的真金犒赏。丝芙兰力挺你家闺蜜！让你们都美哒哒！&searchPic=false&style=simple';
 
         $this->load->helper('url');
         redirect($url);
