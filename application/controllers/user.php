@@ -101,21 +101,22 @@ class User extends CI_Controller {
         }
 
         //signature
-        $timestamp = time();
-        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $wxnonceStr = "sephora";
-        $wxticket = $ticket;
-        $wx_str = 'jsapi_ticket=' . $wxticket . '&noncestr=' . $wxnonceStr . '&timestamp=' . $timestamp . '&url=' . $url;
-        $wxSha1 = sha1($wx_str);
+//        $timestamp = time();
+//        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+//        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+//        $wxnonceStr = "sephora";
+//        $wxticket = $ticket;
+//        $wx_str = 'jsapi_ticket=' . $wxticket . '&noncestr=' . $wxnonceStr . '&timestamp=' . $timestamp . '&url=' . $url;
+//        $wxSha1 = sha1($wx_str);
         $data = array(
-            'timestamp' => $timestamp,
-            'nonceStr' => $wxnonceStr,
-            'signature' => $wxSha1,
+//            'timestamp' => $timestamp,
+//            'nonceStr' => $wxnonceStr,
+//            'signature' => $wxSha1,
             'qid' => $qid,
             'q' => $q,
         );
-        $this->load->view('creatquestion', $data);
+//        $this->load->view('creatquestion', $data);
+        $this->load->view('startgift', $data);
     }
 
     public function startgift($qid){
