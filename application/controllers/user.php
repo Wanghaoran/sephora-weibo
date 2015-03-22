@@ -165,7 +165,25 @@ class User extends CI_Controller {
     public function share_weibo(){
 
         $user_friend = $this -> _bilateral($this->session->userdata('token')['access_token'], $this->session->userdata('token')['uid']);
-        var_dump($user_friend);
+
+        $name = '';
+
+        if(count($user_friend['users']) >= 3){
+            $total = 3;
+        }else{
+            $total = count($user_friend['users']);
+        }
+
+        for($i = 0; $i < $total; $i++){
+            $name .= '@' . $user_friend['users'][$i]['screen_name'];
+        }
+
+        $url = 'http://service.weibo.com/share/share.php?url=' . urlencode($this->config->base_url()) . '&type=button&language=zh_cn&appkey=3YdKYq&title=＃真金犒赏真闺蜜＃' . $name . '&searchPic=false&style=simple';
+
+        $this->load->helper('url');
+        redirect($url);
+
+
 //        $this->load->view('startgift', $data);
     }
 
