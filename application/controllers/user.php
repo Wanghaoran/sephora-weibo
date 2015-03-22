@@ -4,9 +4,17 @@ class User extends CI_Controller {
 
     public function _remap($method, $params = array()){
 
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
+
+
+
         //check authorization
         if(!$this->session->userdata('sephora_wechat_id')){
-            $this->load->helper('url');
             /*
             if($method == 'usercenter'){
                 redirect('welcome/oauth2_authorize?q=usercenter');

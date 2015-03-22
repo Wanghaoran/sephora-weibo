@@ -15,6 +15,12 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
+
         $this->load->view('weibo_index');
     }
 
@@ -26,6 +32,12 @@ class Welcome extends CI_Controller {
     */
 
     public function terms(){
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
+
         $this->load->view('terms');
     }
 
@@ -271,8 +283,11 @@ class Welcome extends CI_Controller {
     }
 
     public function question($q){
-
+        $this -> load -> library('user_agent');
         $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
 
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
@@ -304,7 +319,11 @@ class Welcome extends CI_Controller {
     }
 
     public function trueanswer($q){
+        $this -> load -> library('user_agent');
         $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }
@@ -362,7 +381,11 @@ class Welcome extends CI_Controller {
 
 
     public function completequestion($q){
+        $this -> load -> library('user_agent');
         $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }
@@ -398,15 +421,30 @@ class Welcome extends CI_Controller {
     }
 
     public function nocode(){
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
         $this->load->view('nocode');
     }
 
     public function errorpage(){
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
         $this->load->view('errorpage');
 
     }
 
     public function usercenter(){
+        $this -> load -> library('user_agent');
+        $this->load->helper('url');
+        if(!$this -> agent -> is_mobile()){
+            redirect('welcome/pc');
+        }
 
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize3?q=usercenter');
@@ -429,6 +467,10 @@ class Welcome extends CI_Controller {
             'icon' => $user_info[0]['headimgurl']
         );
         $this->load->view('usercenter', $data);
+    }
+
+    public function pc(){
+        echo 'pc';
     }
 }
 
