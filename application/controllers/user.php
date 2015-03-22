@@ -163,7 +163,18 @@ class User extends CI_Controller {
 
     //share_weibo
     public function share_weibo(){
+
+        $user_friend = $this -> _bilateral($this->session->userdata('token')['access_token'], $this->session->userdata('token')['uid']);
+        var_dump($user_friend);
 //        $this->load->view('startgift', $data);
+    }
+
+    //微博API － 互粉列表
+    public function _bilateral($asstoken, $uid){
+        $url = 'https://api.weibo.com/2/friendships/friends/bilateral.json?access_token=' . $asstoken . '&uid=' . $uid;
+        $json_result = file_get_contents($url);
+        $result = json_decode($json_result, true);
+        return $result;
     }
 
 
