@@ -164,6 +164,12 @@ class User extends CI_Controller {
     //share_weibo
     public function share_weibo(){
 
+        $q = $_GET['q'];
+
+        $this -> load -> model('question_model');
+        $question = $this -> question_model -> getquestion($q);
+
+
         $user_friend = $this -> _bilateral($this->session->userdata('token')['access_token'], $this->session->userdata('token')['uid']);
 
         $name = '';
@@ -178,7 +184,7 @@ class User extends CI_Controller {
             $name .= '@' . $user_friend['users'][$i]['screen_name'];
         }
 
-        $url = 'http://service.weibo.com/share/share.php?url=' . urlencode($this->config->base_url()) . '&type=button&language=zh_cn&appkey=3YdKYq&title=＃真金犒赏真闺蜜＃' . $name . '&searchPic=false&style=simple';
+        $url = 'http://service.weibo.com/share/share.php?url=' . urlencode($this->config->base_url() . '/q/') . '&type=button&language=zh_cn&appkey=3YdKYq&title=＃真金犒赏真闺蜜＃' . $question['q'] . $name . '，速速来答题，应走我的真金犒赏。丝芙兰力挺你家闺蜜！让你们都美哒哒！&searchPic=false&style=simple';
 
         $this->load->helper('url');
         redirect($url);
