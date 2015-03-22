@@ -119,13 +119,7 @@ class User extends CI_Controller {
         $this->load->view('startgift', $data);
     }
 
-    public function startgift($qid){
-        $data = array(
-            'qid' => $qid,
-        );
-        $this->load->view('startgift', $data);
 
-    }
 
     public function endquestion($qid){
         $this->load->helper('url');
@@ -165,6 +159,24 @@ class User extends CI_Controller {
         $this->load->view('endquestion', $data);
 
     }
+
+
+    //share_weibo
+    public function share_weibo(){
+//        $this->load->view('startgift', $data);
+    }
+
+
+
+    public function startgift($qid){
+        $data = array(
+            'qid' => $qid,
+        );
+        $this->load->view('startgift', $data);
+
+    }
+
+
 
 
 
