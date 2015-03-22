@@ -421,8 +421,8 @@ class Welcome extends CI_Controller {
         $code50 = $this -> code_model -> selectmycode(50, $uid);
 
 
-        $this -> load -> model('wechatuser_model');
-        $user_info = $this -> wechatuser_model -> queryhave2($uid);
+        $this -> load -> model('weibouser_model');
+        $user_info = $this -> weibouser_model -> queryhave2($uid);
 
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
