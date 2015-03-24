@@ -68,5 +68,10 @@ class question_model extends CI_Model {
         return $this -> db -> affected_rows();
     }
 
+    public function getnum(){
+        $now = $this->db->count_all_results('question');
+        return $now;
+    }
+
 
 }
