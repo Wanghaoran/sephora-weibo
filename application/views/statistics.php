@@ -13,6 +13,7 @@
 
 </head>
 <body>
+<h1>丝芙兰－真金犒赏真闺蜜－微博数据统计系统</h1>
 
 <ul>
     <li><h2>10元优惠券已领取数量：<span style="color:green;"><?=$code_10_1;?></span>&nbsp;&nbsp;&nbsp;&nbsp;10元优惠券剩余数量：<span style="color:red;"><?=$code_10_2;?></span></h2></li>
