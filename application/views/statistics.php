@@ -15,7 +15,9 @@
 <body>
 
 <ul>
+    <li><h2>10元优惠券已领取数量：<span style="color:green;"><?=$code_10_1;?></span>&nbsp;&nbsp;&nbsp;&nbsp;10元优惠券剩余数量：<span style="color:red;"><?=$code_10_2;?></span></h2></li>
     <li><h2>30元优惠券已领取数量：<span style="color:green;"><?=$code_30_1;?></span>&nbsp;&nbsp;&nbsp;&nbsp;30元优惠券剩余数量：<span style="color:red;"><?=$code_30_2;?></span></h2></li>
+    <li><h2>50元优惠券已领取数量：<span style="color:green;"><?=$code_50_1;?></span>&nbsp;&nbsp;&nbsp;&nbsp;50元优惠券剩余数量：<span style="color:red;"><?=$code_50_2;?></span></h2></li>
 </ul>
 
 </body>

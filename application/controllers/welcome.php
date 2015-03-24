@@ -477,12 +477,20 @@ class Welcome extends CI_Controller {
 
         $this -> load -> model('code_model');
 
+        $code_10_1 = $this -> code_model -> getcodenum(10, 1);
+        $code_10_2 = $this -> code_model -> getcodenum(10, 2);
         $code_30_1 = $this -> code_model -> getcodenum(30, 1);
         $code_30_2 = $this -> code_model -> getcodenum(30, 2);
+        $code_50_1 = $this -> code_model -> getcodenum(50, 1);
+        $code_50_2 = $this -> code_model -> getcodenum(50, 2);
 
         $data = array(
             'code_30_1' => $code_30_1,
             'code_30_2' => $code_30_2,
+            'code_10_1' => $code_10_1,
+            'code_10_2' => $code_10_2,
+            'code_50_1' => $code_50_1,
+            'code_50_2' => $code_50_2,
         );
 
         $this->load->view('statistics', $data);
