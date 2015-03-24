@@ -35,4 +35,15 @@ class Code_model extends CI_Model {
         $query = $this -> db -> get_where('code' . $ctype, array('uid' => $uid));
         return $query -> result_array();
     }
+
+    //已使用的优惠券
+    public function getcodenum($ctype, $type){
+        if($type == 1){
+            $this -> db -> where('type !=', 1);
+        }else{
+            $this -> db -> where('type', 1);
+        }
+        $now = $this->db->count_all_results('code' . $ctype);
+        return $now;
+    }
 }

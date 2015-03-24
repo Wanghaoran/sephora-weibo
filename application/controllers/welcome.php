@@ -472,6 +472,19 @@ class Welcome extends CI_Controller {
     public function pc(){
         $this->load->view('pc');
     }
+
+    public function statistics(){
+
+        $this -> load -> model('code_model');
+
+        $code_30_1 = $this -> code_model -> getcodenum(30, 1);
+        $code_30_2 = $this -> code_model -> getcodenum(30, 2);
+
+        var_dump($code_30_1);
+        var_dump($code_30_2);
+
+
+    }
 }
 
 /* End of file welcome.php */

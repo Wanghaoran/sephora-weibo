@@ -57,6 +57,7 @@ $route['errorpage'] = 'welcome/errorpage';
 
 $route['weibo'] = 'welcome/weibo_index';
 $route['share_weibo'] = 'user/share_weibo';
+$route['statistics'] = 'welcome/statistics';
 
 
 
