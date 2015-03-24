@@ -41,4 +41,9 @@ class Questionuser_model extends CI_Model {
         return $now;
     }
 
+    public function getnum(){
+        $now = $this->db->count_all_results('questionuser');
+        return $now;
+    }
+
 }

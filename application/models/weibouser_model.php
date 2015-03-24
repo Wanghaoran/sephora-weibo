@@ -33,4 +33,9 @@ class weibouser_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function getnum(){
+        $now = $this->db->count_all_results('weibouser');
+        return $now;
+    }
+
 }

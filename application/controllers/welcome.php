@@ -477,6 +477,8 @@ class Welcome extends CI_Controller {
 
         $this -> load -> model('code_model');
         $this -> load -> model('question_model');
+        $this -> load -> model('questionuser_model');
+        $this -> load -> model('weibouser_model');
 
         $code_10_1 = $this -> code_model -> getcodenum(10, 1);
         $code_10_2 = $this -> code_model -> getcodenum(10, 2);
@@ -485,6 +487,8 @@ class Welcome extends CI_Controller {
         $code_50_1 = $this -> code_model -> getcodenum(50, 1);
         $code_50_2 = $this -> code_model -> getcodenum(50, 2);
         $question_num = $this -> question_model -> getnum();
+        $ex_num = $this -> questionuser_model -> getnum();
+        $p_num = $this -> weibouser_model -> getnum();
 
         $data = array(
             'code_30_1' => $code_30_1,
@@ -494,6 +498,8 @@ class Welcome extends CI_Controller {
             'code_50_1' => $code_50_1,
             'code_50_2' => $code_50_2,
             'question_num' => $question_num,
+            'ex_num' => $ex_num,
+            'p_num' => $p_num,
         );
 
         $this->load->view('statistics', $data);
