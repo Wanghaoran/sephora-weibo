@@ -40,7 +40,7 @@
 
             <?php if($name): ?>
                 <div class="s8_friend_title">真命闺蜜</div>
-                <div class="s8_friend"><?=$name;?>凭实力在<?=$num;?>名闺蜜中一题成名,<br>获封“真名闺蜜”！让我们一起美下去</div>
+                <div class="s8_friend"><?=$name;?>凭实力在<?=$num;?>名闺蜜中一题成名,<br>获封“真命闺蜜”！让我们一起美下去</div>
             <?php endif; ?>
 
 
@@ -68,6 +68,9 @@
     </div>
 </div>
 
+<div style="display: none;">
+    <script src="http://s11.cnzz.com/stat.php?id=1254626964&web_id=1254626964" language="JavaScript"></script>
+</div>
 
 
 <script type="text/javascript" src="<?=$this->config->base_url()?>public/js/zepto.js"></script>

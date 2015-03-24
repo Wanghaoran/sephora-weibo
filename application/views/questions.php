@@ -50,7 +50,9 @@
         </section>
     </div>
 </div>
-
+<div style="display: none;">
+    <script src="http://s11.cnzz.com/stat.php?id=1254626964&web_id=1254626964" language="JavaScript"></script>
+</div>
 
 
 <script type="text/javascript" src="<?=$this->config->base_url()?>public/js/zepto.js"></script>

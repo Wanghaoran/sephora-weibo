@@ -46,7 +46,9 @@
     <a class="lightbox_close" href="javascript:;"></a>
     <!-- <a class="lightbox_a" href="#" target="_blank">活动规则</a> -->
 </div>
-
+<div style="display: none;">
+    <script src="http://s11.cnzz.com/stat.php?id=1254626964&web_id=1254626964" language="JavaScript"></script>
+</div>
 
 </body>
 
