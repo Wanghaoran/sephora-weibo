@@ -16,9 +16,9 @@
 <h1>丝芙兰－真金犒赏真闺蜜－微博数据统计系统</h1>
 
 <ul>
-    <li><h2>10元优惠券已领取数量：<span style="color:green;"><?=$code_10_1+2388;?></span>&nbsp;&nbsp;&nbsp;&nbsp;10元优惠券剩余数量：<span style="color:red;"><?=$code_10_2-2388;?></span></h2></li>
-    <li><h2>30元优惠券已领取数量：<span style="color:green;"><?=$code_30_1+11484;?></span>&nbsp;&nbsp;&nbsp;&nbsp;30元优惠券剩余数量：<span style="color:red;"><?=$code_30_2-11484;?></span></h2></li>
-    <li><h2>50元优惠券已领取数量：<span style="color:green;"><?=$code_50_1+1184;?></span>&nbsp;&nbsp;&nbsp;&nbsp;50元优惠券剩余数量：<span style="color:red;"><?=$code_50_2-1184;?></span></h2></li>
+    <li><h2>10元优惠券已领取数量：<span style="color:green;"><?=$code_10_1+2388;?></span>&nbsp;&nbsp;&nbsp;&nbsp;10元优惠券剩余数量：<span style="color:red;"><?=$code_10_2-2388+2000;?></span></h2></li>
+    <li><h2>30元优惠券已领取数量：<span style="color:green;"><?=$code_30_1+11484;?></span>&nbsp;&nbsp;&nbsp;&nbsp;30元优惠券剩余数量：<span style="color:red;"><?=$code_30_2-11484+2000;?></span></h2></li>
+    <li><h2>50元优惠券已领取数量：<span style="color:green;"><?=$code_50_1+1184;?></span>&nbsp;&nbsp;&nbsp;&nbsp;50元优惠券剩余数量：<span style="color:red;"><?=$code_50_2-1184+2000;?></span></h2></li>
     <li><h2>礼包生成数量：<span style="color:blue;"><?=$question_num+9844;?></span></h2></li>
     <li><h2>参与互动人数：<span style="color:blue;"><?=$p_num+12936;?></span></h2></li>
     <li><h2>回答问题数量：<span style="color:blue;"><?=$ex_num+4686;?></span></h2></li>
